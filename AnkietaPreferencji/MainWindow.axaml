@@ -5,5 +5,36 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="AnkietaPreferencji.MainWindow"
         Title="AnkietaPreferencji">
-    Welcome to Avalonia!
+    <StackPanel>
+       
+        
+        <TextBox x:Name="TextBoxImie" Watermark="Wpisz swoje imię"/>
+        <ComboBox x:Name="ComboBoxKategoria" PlaceholderText="Wybierz kategorię zainteresowań">
+            <ComboBoxItem>Technologia</ComboBoxItem>
+            <ComboBoxItem>Sport</ComboBoxItem>
+            <ComboBoxItem>Kultura</ComboBoxItem>
+        </ComboBox>
+        <Button x:Name="SubmitButton1" Content="Zatwierdź" Click="SubmitButton_Click"/>
+        
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            
+            <TextBlock Grid.Row="0" Text="Czy lubisz programować?" Margin="5"/>
+            <CheckBox Grid.Row="0" x:Name="CheckBoxPytanie1" Content="Tak" Margin="20"/>
+            
+            <TextBlock Grid.Row="1" Text="Czy interesujesz się sportem?" Margin="5"/>
+            <CheckBox Grid.Row="1" x:Name="CheckBoxPytanie2" Content="Tak" Margin="20"/>
+            
+            <TextBlock Grid.Row="2" Text="Czy lubisz kebaby?" Margin="5"/>
+            <CheckBox Grid.Row="2" x:Name="CheckBoxPytanie3" Content="Tak" Margin="20"/>
+            </Grid>
+        <Button Content="Pokaż podsumowanie" Click="Podsumowanie"/>
+        <StackPanel x:Name="PanelPodsumowania">
+            <TextBlock x:Name="PodsumowanieTextBox" Margin="5"/>
+        </StackPanel>
+    </StackPanel>
 </Window>
